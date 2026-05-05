@@ -1,0 +1,123 @@
+﻿Logistic Regression from scratch for sql injection detection.
+
+About the dataset:
+
+What your dataset looks like
+* Total samples: 2682
+* Classes:
+   * Normal (0): 1788
+   * SQLi (1): 894
+Feature: Sentence (raw text)
+Target: Label (binary classification)
+
+The model’s performance will depend much more on feature engineering than on logistic regression itself.
+Logistic regression is simple; the real work is converting SQL queries into meaningful numerical signals.
+1. Text Preprocessing
+Clean your input:
+* Lowercasing
+* Remove HTML entities (&quot;, etc.)
+* Remove unnecessary punctuation (but keep SQL-relevant symbols like ', ", =, --, ;)
+* Tokenization (optional if using vectorizers)
+ Don’t over-clean — SQL injection patterns rely on special characters.
+2. Feature Engineering (CRITICAL)
+You have two good options:
+Option A: Bag of Words / TF-IDF (recommended baseline)
+* Convert sentences into vectors using:
+   * Unigrams + bigrams
+* Example:
+   * "select * from users" → features like select, from users, etc.
+Option B: Manual Feature Extraction (VERY powerful for SQLi)
+You can create features like:
+* Presence of keywords:
+   * SELECT, UNION, DROP, OR, AND
+* Count of:
+   * ', ", --, ;
+* Boolean flags:
+   * contains UNION SELECT
+   * contains tautology (1=1)
+* Length of query
+Best approach: Combine TF-IDF + manual features
+
+
+
+
+
+
+3. Train-Test Split
+Use something like:
+* 80% train / 20% test
+* Stratified split (important due to imbalance)
+4. Handle Class Imbalance
+Your dataset is mildly imbalanced.
+Options:
+* Use class weights (best for logistic regression)
+From scratch, easiest is:
+* Modify loss to weight class 1 higher
+5. Implement Logistic Regression (from scratch)
+Core components:
+* Sigmoid function
+* Cost function (Binary Cross-Entropy):
+* Gradient Descent update
+
+
+6. Regularization (VERY important)
+Without this, your model will overfit text features.
+Use:
+* L2 regularization (Ridge)
+
+
+7. Evaluation Metrics (don’t just use accuracy)
+Because of imbalance, track:
+* Precision
+* Recall
+* F1-score
+* Confusion matrix
+For SQL injection:
+* Recall is very important (don’t miss attacks)
+8. Threshold Tuning
+Default threshold = 0.5
+But for security:
+* Try lowering it (e.g., 0.3–0.4)
+* Improves detection of attacks (higher recall)
+
+
+Do we need hyperparameter tuning?
+Short answer: Yes — but keep it simple
+Tune:
+* Learning rate (α)
+* Number of iterations
+* Regularization strength (λ)
+We don’t need complex tuning like deep learning models.
+
+
+
+
+What would make your model really good
+If you want to stand out:
+* Combine:
+   * TF-IDF (n-grams)
+      * handcrafted SQL features
+* Add:
+   * Keyword pattern detection (UNION SELECT, OR 1=1)
+* Use:
+   * Class-weighted loss
+* Tune:
+   * Decision threshold
+
+
+
+
+Pipeline Flow:
+
+
+Input Query
+   ↓
+Preprocessing
+   ↓
+Feature Extraction (TF-IDF + manual features)
+   ↓
+Feature Vector
+   ↓
+Logistic Regression (your implementation)
+   ↓
+Prediction (0 or 1)
