@@ -1,0 +1,30 @@
+{
+  "threshold": 0.5606285929679871,
+  "test_metrics": {
+    "accuracy": 0.9987714987714987,
+    "f1_score": 0.9990884229717412,
+    "roc_auc": 0.9999862528783036,
+    "tn": 530,
+    "fp": 0,
+    "fn": 2,
+    "tp": 1096
+  },
+  "custom_payloads": {
+    "normal_xss_correct": 10,
+    "normal_xss_misclassified": 0,
+    "complex_xss_correct": 21,
+    "complex_xss_misclassified": 0,
+    "benign_correct": 12,
+    "benign_misclassified": 1
+  },
+  "misclassified_samples": [
+    {
+      "text": "<button onclick='someValidFunction()'>Click</button>",
+      "true_label": 0,
+      "pred_label": 1,
+      "prob": 0.7386293411254883,
+      "category": "Benign",
+      "error_type": "FP"
+    }
+  ]
+}

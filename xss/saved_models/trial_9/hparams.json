@@ -1,0 +1,14 @@
+{
+  "max_len": 128,
+  "embed_dim": 32,
+  "num_filters": 256,
+  "lr": 0.0005,
+  "pos_weight": 0.6,
+  "dropout": 0.3,
+  "save_dir": "/Users/saranoor/Downloads/try ml/saved_models/trial_9",
+  "batch_size": 128,
+  "epochs": 10,
+  "patience": 4,
+  "threshold": 0.5,
+  "seed": 42
+}

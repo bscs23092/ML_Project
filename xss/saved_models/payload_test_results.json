@@ -1,0 +1,44 @@
+{
+  "threshold": 0.5606285929679871,
+  "summary": {
+    "total_tested": 135,
+    "correct": 133,
+    "accuracy": 0.9851851851851852,
+    "misclassified": 2
+  },
+  "by_category": {
+    "normal_xss": {
+      "correct": 10,
+      "total": 10,
+      "misclassified": 0
+    },
+    "complex_xss": {
+      "correct": 38,
+      "total": 38,
+      "misclassified": 0
+    },
+    "benign": {
+      "correct": 85,
+      "total": 87,
+      "misclassified": 2
+    }
+  },
+  "misclassified_samples": [
+    {
+      "text": "<button onclick='someValidFunction()'>Click</button>",
+      "true_label": 0,
+      "pred_label": 1,
+      "confidence": 0.7386294007301331,
+      "category": "Benign",
+      "error_type": "FP"
+    },
+    {
+      "text": "<meter value='6' min='0' max='10'></meter>",
+      "true_label": 0,
+      "pred_label": 1,
+      "confidence": 0.671930730342865,
+      "category": "Benign",
+      "error_type": "FP"
+    }
+  ]
+}
