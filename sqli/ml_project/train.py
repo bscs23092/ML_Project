@@ -25,11 +25,7 @@ from sql_injection_lr.tuning import grid_search
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Train SQL injection detection from scratch.")
-    parser.add_argument(
-        "--data",
-        default="dataset/Modified_SQL_Dataset.csv",
-        help="CSV file with Query/Label or Sentence/Label columns.",
-    )
+    parser.add_argument("--data", default="dataset/sqli_cleaned.csv", help="CSV file with Sentence and Label columns.")
     parser.add_argument("--model-out", default="artifacts/sqli_logreg_model.json", help="Where to save the trained pipeline.")
     parser.add_argument("--report-out", default="reports/evaluation.json", help="Where to save metrics and tuning results.")
     parser.add_argument("--seed", type=int, default=42, help="Random seed for stratified splits.")

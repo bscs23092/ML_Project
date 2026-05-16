@@ -9,8 +9,8 @@ from pathlib import Path
 
 def load_dataset(
     csv_path: str | Path,
-    text_column: str | None = None,
-    label_column: str | None = None,
+    text_column: str = "Sentence",
+    label_column: str = "Label",
 ) -> tuple[list[str], list[int]]:
     """Load the SQLi CSV dataset as raw texts and integer labels."""
     path = Path(csv_path)
@@ -23,34 +23,16 @@ def load_dataset(
         reader = csv.DictReader(handle)
         if reader.fieldnames is None:
             raise ValueError(f"Dataset is empty: {path}")
-
-        available_columns = {name.strip().lower(): name for name in reader.fieldnames}
-        text_candidates = [text_column] if text_column else ["sentence", "query", "text", "sentence_text"]
-        label_candidates = [label_column] if label_column else ["label", "class", "target"]
-
-        resolved_text_column = next(
-            (available_columns[candidate.lower()] for candidate in text_candidates if candidate and candidate.lower() in available_columns),
-            None,
-        )
-        resolved_label_column = next(
-            (available_columns[candidate.lower()] for candidate in label_candidates if candidate and candidate.lower() in available_columns),
-            None,
-        )
-
-        if resolved_text_column is None or resolved_label_column is None:
-            missing: list[str] = []
-            if resolved_text_column is None:
-                missing.append("text")
-            if resolved_label_column is None:
-                missing.append("label")
+        missing = {text_column, label_column}.difference(reader.fieldnames)
+        if missing:
             raise ValueError(
-                f"Missing required {', '.join(missing)} column(s). "
+                f"Missing required column(s) {sorted(missing)}. "
                 f"Found columns: {reader.fieldnames}"
             )
 
         for row_number, row in enumerate(reader, start=2):
-            text = (row.get(resolved_text_column) or "").strip()
-            label_raw = (row.get(resolved_label_column) or "").strip()
+            text = (row.get(text_column) or "").strip()
+            label_raw = (row.get(label_column) or "").strip()
             if not text:
                 continue
             try:

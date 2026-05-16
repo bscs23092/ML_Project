@@ -1,0 +1,55 @@
+{
+  "dataset": {
+    "path": "dataset\\sqli_cleaned.csv",
+    "total_samples": 2682,
+    "label_distribution": {
+      "0": 1788,
+      "1": 894
+    }
+  },
+  "artifact": "artifacts\\sqli_logreg_model.json",
+  "threshold": 0.15,
+  "train_metrics": {
+    "threshold": 0.15,
+    "accuracy": 0.9706293706293706,
+    "precision": 0.9190231362467867,
+    "recall": 1.0,
+    "specificity": 0.955944055944056,
+    "f1": 0.9578030810448761,
+    "f2": 0.9826827927432655,
+    "confusion_matrix": {
+      "tn": 1367,
+      "fp": 63,
+      "fn": 0,
+      "tp": 715
+    }
+  },
+  "test_metrics": {
+    "threshold": 0.15,
+    "accuracy": 0.9702048417132216,
+    "precision": 0.9179487179487179,
+    "recall": 1.0,
+    "specificity": 0.9553072625698324,
+    "f1": 0.9572192513368984,
+    "f2": 0.9824368825466521,
+    "confusion_matrix": {
+      "tn": 342,
+      "fp": 16,
+      "fn": 0,
+      "tp": 179
+    }
+  },
+  "verdict": "Neither underfitting nor overfitting",
+  "figures": {
+    "dataset": [
+      "reports\\evaluation_plots\\dataset_class_distribution.png",
+      "reports\\evaluation_plots\\dataset_token_length_histogram.png",
+      "reports\\evaluation_plots\\dataset_token_length_boxplot.png"
+    ],
+    "learning_curve": "reports\\evaluation_plots\\learning_curve.png",
+    "loss_curve": "reports\\evaluation_plots\\loss_curve.png",
+    "confusion_matrix": "reports\\evaluation_plots\\confusion_matrix.png",
+    "roc_curve": "reports\\evaluation_plots\\roc_curve.png",
+    "threshold_curve": "reports\\evaluation_plots\\threshold_curve.png"
+  }
+}

@@ -20,7 +20,6 @@ The pipeline follows the requested plan:
 - `sql_injection_lr/split.py`: stratified splitting
 - `sql_injection_lr/metrics.py`: evaluation and threshold metrics
 - `sql_injection_lr/tuning.py`: simple hyperparameter and threshold tuning
-- `sql_injection_lr/data.py`: load text/label datasets using either `Sentence` or `Query`
 - `sql_injection_lr/pipeline.py`: save/load prediction pipeline
 - `train.py`: train, tune, evaluate, and save artifacts
 - `predict.py`: classify a new query with the saved model
@@ -35,8 +34,6 @@ Outputs:
 
 - `artifacts/sqli_logreg_model.json`
 - `reports/evaluation.json`
-
-By default, training now uses `dataset/Modified_SQL_Dataset.csv`, which includes both benign SQL statements and SQL injection examples.
 
 ## Predict
 
