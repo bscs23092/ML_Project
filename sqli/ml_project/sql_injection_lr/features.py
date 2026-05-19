@@ -1,5 +1,3 @@
-"""TF-IDF and handcrafted SQL feature extraction."""
-
 from __future__ import annotations
 
 import math
@@ -32,8 +30,6 @@ SQL_KEYWORDS = (
 
 
 class TfidfVectorizerScratch:
-    """Sparse unigram/bigram TF-IDF vectorizer implemented from scratch."""
-
     def __init__(self, config: FeatureConfig | None = None):
         self.config = config or FeatureConfig()
         self.vocabulary_: dict[str, int] = {}
@@ -114,8 +110,6 @@ class TfidfVectorizerScratch:
 
 
 class ManualSQLFeatureExtractor:
-    """Handcrafted SQLi signals, standardized using training data only."""
-
     BASE_FEATURE_NAMES = (
         "length_chars",
         "length_tokens",
@@ -276,8 +270,6 @@ class ManualSQLFeatureExtractor:
 
 
 class CombinedFeatureExtractor:
-    """Combines sparse TF-IDF terms with standardized manual SQL features."""
-
     def __init__(self, config: FeatureConfig | None = None):
         self.config = config or FeatureConfig()
         self.tfidf = TfidfVectorizerScratch(self.config)

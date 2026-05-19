@@ -1,5 +1,3 @@
-"""End-to-end SQL injection detection pipeline."""
-
 from __future__ import annotations
 
 import json
@@ -11,8 +9,6 @@ from .model import LogisticRegressionScratch
 
 
 class SQLInjectionPipeline:
-    """Feature extraction plus the from-scratch logistic regression model."""
-
     def __init__(
         self,
         feature_extractor: CombinedFeatureExtractor | None = None,

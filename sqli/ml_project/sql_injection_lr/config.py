@@ -1,5 +1,3 @@
-"""Configuration objects for the SQL injection detection pipeline."""
-
 from dataclasses import asdict, dataclass
 
 
@@ -36,7 +34,6 @@ class TrainingConfig:
 
 
 def default_model_grid() -> list[ModelConfig]:
-    """Small hyperparameter grid for the from-scratch model."""
     return [
         ModelConfig(learning_rate=0.15, iterations=250, l2_lambda=0.05),
         ModelConfig(learning_rate=0.20, iterations=250, l2_lambda=0.10),
@@ -46,5 +43,4 @@ def default_model_grid() -> list[ModelConfig]:
 
 
 def default_threshold_grid() -> list[float]:
-    """Security-oriented threshold grid with extra focus below 0.50."""
     return [round(value / 100, 2) for value in range(15, 66, 2)]

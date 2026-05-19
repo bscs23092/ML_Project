@@ -1,5 +1,3 @@
-"""SQL-aware text cleaning and tokenization."""
-
 from __future__ import annotations
 
 import html
@@ -16,7 +14,6 @@ TOKEN_RE = re.compile(
 
 
 def clean_text(text: str) -> str:
-    """Lowercase, decode HTML entities, and keep SQL-relevant symbols."""
     decoded = html.unescape(text or "").lower()
     kept: list[str] = []
     for char in decoded:
@@ -28,7 +25,6 @@ def clean_text(text: str) -> str:
 
 
 def tokenize(text: str) -> list[str]:
-    """Tokenize without losing SQL operators and comment markers."""
     cleaned = clean_text(text)
     return TOKEN_RE.findall(cleaned)
 

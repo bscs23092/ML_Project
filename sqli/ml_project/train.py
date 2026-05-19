@@ -1,5 +1,3 @@
-"""Train and evaluate the SQL injection logistic regression pipeline."""
-
 from __future__ import annotations
 
 import argparse

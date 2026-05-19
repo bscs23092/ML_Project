@@ -1,5 +1,3 @@
-"""Dataset loading helpers."""
-
 from __future__ import annotations
 
 import csv
@@ -12,7 +10,6 @@ def load_dataset(
     text_column: str = "Sentence",
     label_column: str = "Label",
 ) -> tuple[list[str], list[int]]:
-    """Load the SQLi CSV dataset as raw texts and integer labels."""
     path = Path(csv_path)
     if not path.exists():
         raise FileNotFoundError(f"Dataset not found: {path}")

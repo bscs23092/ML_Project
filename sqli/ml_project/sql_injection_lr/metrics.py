@@ -1,5 +1,3 @@
-"""Evaluation metrics for binary SQL injection classification."""
-
 from __future__ import annotations
 
 

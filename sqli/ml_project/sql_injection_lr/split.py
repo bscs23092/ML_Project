@@ -1,5 +1,3 @@
-"""Stratified splitting implemented without external libraries."""
-
 from __future__ import annotations
 
 import random
@@ -15,7 +13,6 @@ def stratified_split_indices(
     test_size: float = 0.20,
     seed: int = 42,
 ) -> tuple[list[int], list[int]]:
-    """Return train and test indices while preserving class ratios."""
     if not 0 < test_size < 1:
         raise ValueError("test_size must be between 0 and 1")
 

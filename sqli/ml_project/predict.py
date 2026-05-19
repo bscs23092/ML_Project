@@ -1,5 +1,3 @@
-"""Predict whether a single query/text is SQL injection."""
-
 from __future__ import annotations
 
 import argparse

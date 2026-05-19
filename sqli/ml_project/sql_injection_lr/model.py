@@ -1,5 +1,3 @@
-"""From-scratch class-weighted logistic regression with L2 regularization."""
-
 from __future__ import annotations
 
 import math
@@ -12,8 +10,6 @@ SparseRow = tuple[tuple[int, ...], tuple[float, ...]]
 
 
 class LogisticRegressionScratch:
-    """Binary logistic regression trained with full-batch gradient descent."""
-
     def __init__(
         self,
         learning_rate: float = 0.25,

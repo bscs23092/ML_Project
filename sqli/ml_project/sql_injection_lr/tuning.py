@@ -1,5 +1,3 @@
-"""Simple hyperparameter and threshold tuning."""
-
 from __future__ import annotations
 
 from dataclasses import asdict
@@ -19,7 +17,6 @@ def grid_search(
     thresholds: list[float],
     beta: float = 2.0,
 ) -> tuple[LogisticRegressionScratch, float, dict, list[dict]]:
-    """Train each config, tune threshold on validation data, and return the best."""
     if not model_configs:
         raise ValueError("model_configs cannot be empty")
 
