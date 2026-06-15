@@ -1,0 +1,18 @@
+query,expected_label
+"SELECT * FROM users WHERE username = 'admin' AND password = 'secret';",Normal
+"admin' OR '1'='1' --",Malicious
+"1 UNION SELECT username,password FROM users --",Malicious
+"SELECT id,name FROM products WHERE category = 'books';",Normal
+"'; DROP TABLE users; --",Malicious
+"Robert'); DELETE FROM accounts WHERE ('1'='1",Malicious
+"UPDATE users SET last_login = NOW() WHERE id = 42;",Normal
+"1' AND SLEEP(5) --",Malicious
+"search=wireless keyboard",Normal
+"SELECT email, created_at FROM customers WHERE status = 'active';",Normal
+"INSERT INTO orders (user_id, product_id, quantity) VALUES (42, 7, 2);",Normal
+"DELETE FROM sessions WHERE expires_at < NOW();",Normal
+"SELECT COUNT(*) FROM invoices WHERE paid = 1;",Normal
+"UPDATE profiles SET display_name = 'Alice Johnson' WHERE user_id = 42;",Normal
+"SELECT * FROM support_tickets WHERE priority = 'high' ORDER BY created_at DESC;",Normal
+"' OR 1=1#",Malicious
+

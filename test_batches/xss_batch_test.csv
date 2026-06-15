@@ -1,0 +1,12 @@
+input,expected_label
+"Hello, this is a normal comment.",Normal
+"<script>alert('xss')</script>",Malicious
+"<img src=x onerror=alert(1)>",Malicious
+"Welcome to my profile page.",Normal
+"javascript:alert(document.cookie)",Malicious
+"<svg onload=alert(1)>",Malicious
+"The product ships within 3 days.",Normal
+"<iframe srcdoc='<script>alert(1)</script>'></iframe>",Malicious
+"Click here for more details.",Normal
+"<body onload=alert('owned')>",Malicious
+
