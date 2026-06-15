@@ -1,0 +1,372 @@
+{
+  "dataset": {
+    "path": "C:\\Spring-26\\Machine Learning\\project\\ML_Project\\csrf\\dataset\\mitch-master\\dataset\\features_matrix.csv",
+    "samples": 6312,
+    "features_before_pipeline": 52,
+    "original_flag_distribution": {
+      "m": 54,
+      "n": 5078,
+      "u": 241,
+      "y": 939
+    },
+    "binary_distribution": {
+      "0": 5373,
+      "1": 939
+    },
+    "train_binary_distribution": {
+      "0": 4298,
+      "1": 751
+    },
+    "test_binary_distribution": {
+      "0": 1075,
+      "1": 188
+    },
+    "train_original_flag_distribution": {
+      "m": 39,
+      "n": 4070,
+      "u": 189,
+      "y": 751
+    },
+    "test_original_flag_distribution": {
+      "m": 15,
+      "n": 1008,
+      "u": 52,
+      "y": 188
+    }
+  },
+  "leakage_controls": [
+    "reqId and flag are removed before modeling.",
+    "The held-out test set is never used for hyperparameter tuning or threshold selection.",
+    "Log transforms and variance filtering are inside the sklearn Pipeline, so they are refit inside each CV fold.",
+    "All splits are stratified on the binary target."
+  ],
+  "best_params": {
+    "model_type": "sklearn.ensemble.HistGradientBoostingClassifier",
+    "boosting_note": "XGBoost is not required; this uses scikit-learn histogram gradient boosting.",
+    "best_cv_average_precision": 0.771861140076665,
+    "best_params": {
+      "clf__l2_regularization": 0.5,
+      "clf__learning_rate": 0.050716661834446466,
+      "clf__max_bins": 128,
+      "clf__max_depth": null,
+      "clf__max_features": 0.75,
+      "clf__max_iter": 200,
+      "clf__max_leaf_nodes": 31,
+      "clf__min_samples_leaf": 5
+    },
+    "oof_threshold_selection": {
+      "threshold": 0.6488458240452344,
+      "precision": 0.6756440281030445,
+      "recall": 0.7683089214380826,
+      "f1": 0.7190031152647975
+    },
+    "cv": {
+      "folds": 5,
+      "splitter": "StratifiedKFold(shuffle=True)",
+      "refit_metric": "average_precision",
+      "n_iter": 50
+    },
+    "split": {
+      "test_size": 0.2,
+      "strategy": "Stratified train/test split; hyperparameters selected by CV only on training split.",
+      "random_state": 42
+    },
+    "artifacts": {
+      "model": "C:\\Spring-26\\Machine Learning\\project\\ML_Project\\csrf\\artifacts\\csrf_boosting_pipeline.joblib",
+      "report": "C:\\Spring-26\\Machine Learning\\project\\ML_Project\\csrf\\reports\\evaluation.json",
+      "cv_results": "C:\\Spring-26\\Machine Learning\\project\\ML_Project\\csrf\\reports\\cv_results.csv",
+      "feature_importance": "C:\\Spring-26\\Machine Learning\\project\\ML_Project\\csrf\\reports\\permutation_importance.json"
+    }
+  },
+  "selected_features_after_variance": [
+    "numOfParams",
+    "numOfBools",
+    "numOfIds",
+    "numOfBlobs",
+    "reqLen",
+    "createInPath",
+    "createInParams",
+    "addInPath",
+    "addInParams",
+    "setInPath",
+    "setInParams",
+    "deleteInPath",
+    "deleteInParams",
+    "updateInPath",
+    "updateInParams",
+    "removeInPath",
+    "removeInParams",
+    "friendInPath",
+    "friendInParams",
+    "settingInPath",
+    "settingInParams",
+    "passwordInPath",
+    "passwordInParams",
+    "tokenInPath",
+    "tokenInParams",
+    "changeInPath",
+    "changeInParams",
+    "actionInPath",
+    "actionInParams",
+    "payInPath",
+    "payInParams",
+    "loginInPath",
+    "loginInParams",
+    "logoutInPath",
+    "logoutInParams",
+    "postInPath",
+    "postInParams",
+    "commentInPath",
+    "commentInParams",
+    "followInPath",
+    "followInParams",
+    "subscribeInPath",
+    "subscribeInParams",
+    "signInPath",
+    "signInParams",
+    "viewInPath",
+    "viewInParams",
+    "isPUT",
+    "isDELETE",
+    "isPOST",
+    "isGET",
+    "isOPTIONS"
+  ],
+  "train_oof_metrics": {
+    "threshold": 0.6488458240452344,
+    "average_precision": 0.7673703626251156,
+    "roc_auc": 0.9265695994606848,
+    "precision": 0.6756440281030445,
+    "recall": 0.7683089214380826,
+    "f1": 0.7190031152647975,
+    "confusion_matrix": [
+      [
+        4021,
+        277
+      ],
+      [
+        174,
+        577
+      ]
+    ],
+    "classification_report": {
+      "not_csrf_relevant": {
+        "precision": 0.9585220500595948,
+        "recall": 0.9355514192647744,
+        "f1-score": 0.9468974449546685,
+        "support": 4298.0
+      },
+      "csrf_relevant": {
+        "precision": 0.6756440281030445,
+        "recall": 0.7683089214380826,
+        "f1-score": 0.7190031152647975,
+        "support": 751.0
+      },
+      "accuracy": 0.9106753812636166,
+      "macro avg": {
+        "precision": 0.8170830390813196,
+        "recall": 0.8519301703514285,
+        "f1-score": 0.832950280109733,
+        "support": 5049.0
+      },
+      "weighted avg": {
+        "precision": 0.9164461153221479,
+        "recall": 0.9106753812636166,
+        "f1-score": 0.9129999124537589,
+        "support": 5049.0
+      }
+    }
+  },
+  "test_metrics": {
+    "threshold": 0.6488458240452344,
+    "average_precision": 0.7916490636495642,
+    "roc_auc": 0.9375531914893617,
+    "precision": 0.6462882096069869,
+    "recall": 0.7872340425531915,
+    "f1": 0.709832134292566,
+    "confusion_matrix": [
+      [
+        994,
+        81
+      ],
+      [
+        40,
+        148
+      ]
+    ],
+    "classification_report": {
+      "not_csrf_relevant": {
+        "precision": 0.9613152804642167,
+        "recall": 0.9246511627906977,
+        "f1-score": 0.9426268373636795,
+        "support": 1075.0
+      },
+      "csrf_relevant": {
+        "precision": 0.6462882096069869,
+        "recall": 0.7872340425531915,
+        "f1-score": 0.709832134292566,
+        "support": 188.0
+      },
+      "accuracy": 0.9041963578780681,
+      "macro avg": {
+        "precision": 0.8038017450356018,
+        "recall": 0.8559426026719446,
+        "f1-score": 0.8262294858281227,
+        "support": 1263.0
+      },
+      "weighted avg": {
+        "precision": 0.9144228898694746,
+        "recall": 0.9041963578780681,
+        "f1-score": 0.9079748942303703,
+        "support": 1263.0
+      }
+    }
+  },
+  "test_metrics_at_0_50_threshold": {
+    "threshold": 0.5,
+    "average_precision": 0.7916490636495642,
+    "roc_auc": 0.9375531914893617,
+    "precision": 0.5892857142857143,
+    "recall": 0.8776595744680851,
+    "f1": 0.7051282051282052,
+    "confusion_matrix": [
+      [
+        960,
+        115
+      ],
+      [
+        23,
+        165
+      ]
+    ],
+    "classification_report": {
+      "not_csrf_relevant": {
+        "precision": 0.9766022380467956,
+        "recall": 0.8930232558139535,
+        "f1-score": 0.9329446064139941,
+        "support": 1075.0
+      },
+      "csrf_relevant": {
+        "precision": 0.5892857142857143,
+        "recall": 0.8776595744680851,
+        "f1-score": 0.7051282051282052,
+        "support": 188.0
+      },
+      "accuracy": 0.8907363420427553,
+      "macro avg": {
+        "precision": 0.7829439761662549,
+        "recall": 0.8853414151410193,
+        "f1-score": 0.8190364057710997,
+        "support": 1263.0
+      },
+      "weighted avg": {
+        "precision": 0.9189494221583685,
+        "recall": 0.8907363420427553,
+        "f1-score": 0.899033693158469,
+        "support": 1263.0
+      }
+    }
+  },
+  "top_permutation_importance": [
+    {
+      "feature": "isGET",
+      "importance_mean": 0.30815846415011977,
+      "importance_std": 0.019062620076550168
+    },
+    {
+      "feature": "reqLen",
+      "importance_mean": 0.11064586979804764,
+      "importance_std": 0.016630164043755034
+    },
+    {
+      "feature": "logoutInPath",
+      "importance_mean": 0.07010783687736873,
+      "importance_std": 0.006330057732309286
+    },
+    {
+      "feature": "numOfParams",
+      "importance_mean": 0.05323735915395115,
+      "importance_std": 0.01442355695954122
+    },
+    {
+      "feature": "numOfBlobs",
+      "importance_mean": 0.036945476736364405,
+      "importance_std": 0.007338587492613448
+    },
+    {
+      "feature": "tokenInParams",
+      "importance_mean": 0.03298659033477603,
+      "importance_std": 0.009499835687818002
+    },
+    {
+      "feature": "passwordInParams",
+      "importance_mean": 0.03090316834964925,
+      "importance_std": 0.00660035568822684
+    },
+    {
+      "feature": "payInParams",
+      "importance_mean": 0.023590213669837438,
+      "importance_std": 0.010759847920426164
+    },
+    {
+      "feature": "commentInPath",
+      "importance_mean": 0.020247741428056024,
+      "importance_std": 0.005187991396943814
+    },
+    {
+      "feature": "isPOST",
+      "importance_mean": 0.020191326187278102,
+      "importance_std": 0.008153535383501118
+    },
+    {
+      "feature": "deleteInPath",
+      "importance_mean": 0.014464942053368502,
+      "importance_std": 0.0038190907558463545
+    },
+    {
+      "feature": "isDELETE",
+      "importance_mean": 0.011213496833598608,
+      "importance_std": 0.0008090322413119565
+    },
+    {
+      "feature": "subscribeInPath",
+      "importance_mean": 0.010564193523640346,
+      "importance_std": 0.005256987832631455
+    },
+    {
+      "feature": "removeInPath",
+      "importance_mean": 0.00959870336842817,
+      "importance_std": 0.00777176199434647
+    },
+    {
+      "feature": "isOPTIONS",
+      "importance_mean": 0.009018538969045009,
+      "importance_std": 0.004241571899497109
+    },
+    {
+      "feature": "commentInParams",
+      "importance_mean": 0.006880162620762306,
+      "importance_std": 0.00295139429840471
+    },
+    {
+      "feature": "updateInPath",
+      "importance_mean": 0.005686520712113648,
+      "importance_std": 0.003291949297870482
+    },
+    {
+      "feature": "createInParams",
+      "importance_mean": 0.004757043094084912,
+      "importance_std": 0.0019427682479698902
+    },
+    {
+      "feature": "signInPath",
+      "importance_mean": 0.004568641658814742,
+      "importance_std": 0.0013860829121084758
+    },
+    {
+      "feature": "addInPath",
+      "importance_mean": 0.004072845111266354,
+      "importance_std": 0.0017439420000948044
+    }
+  ]
+}

@@ -1,0 +1,262 @@
+[
+  {
+    "feature": "isGET",
+    "importance_mean": 0.30815846415011977,
+    "importance_std": 0.019062620076550168
+  },
+  {
+    "feature": "reqLen",
+    "importance_mean": 0.11064586979804764,
+    "importance_std": 0.016630164043755034
+  },
+  {
+    "feature": "logoutInPath",
+    "importance_mean": 0.07010783687736873,
+    "importance_std": 0.006330057732309286
+  },
+  {
+    "feature": "numOfParams",
+    "importance_mean": 0.05323735915395115,
+    "importance_std": 0.01442355695954122
+  },
+  {
+    "feature": "numOfBlobs",
+    "importance_mean": 0.036945476736364405,
+    "importance_std": 0.007338587492613448
+  },
+  {
+    "feature": "tokenInParams",
+    "importance_mean": 0.03298659033477603,
+    "importance_std": 0.009499835687818002
+  },
+  {
+    "feature": "passwordInParams",
+    "importance_mean": 0.03090316834964925,
+    "importance_std": 0.00660035568822684
+  },
+  {
+    "feature": "payInParams",
+    "importance_mean": 0.023590213669837438,
+    "importance_std": 0.010759847920426164
+  },
+  {
+    "feature": "commentInPath",
+    "importance_mean": 0.020247741428056024,
+    "importance_std": 0.005187991396943814
+  },
+  {
+    "feature": "isPOST",
+    "importance_mean": 0.020191326187278102,
+    "importance_std": 0.008153535383501118
+  },
+  {
+    "feature": "deleteInPath",
+    "importance_mean": 0.014464942053368502,
+    "importance_std": 0.0038190907558463545
+  },
+  {
+    "feature": "isDELETE",
+    "importance_mean": 0.011213496833598608,
+    "importance_std": 0.0008090322413119565
+  },
+  {
+    "feature": "subscribeInPath",
+    "importance_mean": 0.010564193523640346,
+    "importance_std": 0.005256987832631455
+  },
+  {
+    "feature": "removeInPath",
+    "importance_mean": 0.00959870336842817,
+    "importance_std": 0.00777176199434647
+  },
+  {
+    "feature": "isOPTIONS",
+    "importance_mean": 0.009018538969045009,
+    "importance_std": 0.004241571899497109
+  },
+  {
+    "feature": "commentInParams",
+    "importance_mean": 0.006880162620762306,
+    "importance_std": 0.00295139429840471
+  },
+  {
+    "feature": "updateInPath",
+    "importance_mean": 0.005686520712113648,
+    "importance_std": 0.003291949297870482
+  },
+  {
+    "feature": "createInParams",
+    "importance_mean": 0.004757043094084912,
+    "importance_std": 0.0019427682479698902
+  },
+  {
+    "feature": "signInPath",
+    "importance_mean": 0.004568641658814742,
+    "importance_std": 0.0013860829121084758
+  },
+  {
+    "feature": "addInPath",
+    "importance_mean": 0.004072845111266354,
+    "importance_std": 0.0017439420000948044
+  },
+  {
+    "feature": "isPUT",
+    "importance_mean": 0.0039548407998170575,
+    "importance_std": 0.0007126858578813845
+  },
+  {
+    "feature": "settingInPath",
+    "importance_mean": 0.0037078505487387965,
+    "importance_std": 0.003263090401219143
+  },
+  {
+    "feature": "addInParams",
+    "importance_mean": 0.003365148660322492,
+    "importance_std": 0.002358899354937129
+  },
+  {
+    "feature": "signInParams",
+    "importance_mean": 0.0029040499606046636,
+    "importance_std": 0.001182471258369101
+  },
+  {
+    "feature": "deleteInParams",
+    "importance_mean": 0.0026418629169037513,
+    "importance_std": 0.0018163714853523258
+  },
+  {
+    "feature": "followInPath",
+    "importance_mean": 0.002637235054782831,
+    "importance_std": 0.0005187052463175931
+  },
+  {
+    "feature": "postInPath",
+    "importance_mean": 0.0023353895212132676,
+    "importance_std": 0.001046063167333393
+  },
+  {
+    "feature": "removeInParams",
+    "importance_mean": 0.0022920369050348556,
+    "importance_std": 0.0075970792710461634
+  },
+  {
+    "feature": "viewInParams",
+    "importance_mean": 0.0022819151191896853,
+    "importance_std": 0.0040699860080819225
+  },
+  {
+    "feature": "updateInParams",
+    "importance_mean": 0.0016384313133027831,
+    "importance_std": 0.00040432280186578025
+  },
+  {
+    "feature": "numOfBools",
+    "importance_mean": 0.0015974057864400315,
+    "importance_std": 0.001945073431279874
+  },
+  {
+    "feature": "postInParams",
+    "importance_mean": 0.0013010630896351572,
+    "importance_std": 0.0018348609398124134
+  },
+  {
+    "feature": "viewInPath",
+    "importance_mean": 0.0010435940330346374,
+    "importance_std": 0.0008239658427560944
+  },
+  {
+    "feature": "actionInParams",
+    "importance_mean": 0.0009761476944430525,
+    "importance_std": 0.0006245740923566617
+  },
+  {
+    "feature": "actionInPath",
+    "importance_mean": 0.0008409185169922173,
+    "importance_std": 0.0015865802986038734
+  },
+  {
+    "feature": "loginInParams",
+    "importance_mean": 0.0007821348732953038,
+    "importance_std": 0.0005231116917989152
+  },
+  {
+    "feature": "loginInPath",
+    "importance_mean": 0.000688513561576561,
+    "importance_std": 0.00015420513762124066
+  },
+  {
+    "feature": "friendInPath",
+    "importance_mean": 0.0005310323822175518,
+    "importance_std": 0.00033254491150093305
+  },
+  {
+    "feature": "changeInParams",
+    "importance_mean": 0.0005116598888793493,
+    "importance_std": 0.0010521770553978613
+  },
+  {
+    "feature": "followInParams",
+    "importance_mean": 0.00017300076485076142,
+    "importance_std": 0.0009052823606782815
+  },
+  {
+    "feature": "settingInParams",
+    "importance_mean": 0.00010358549517761607,
+    "importance_std": 0.00014567349841002928
+  },
+  {
+    "feature": "friendInParams",
+    "importance_mean": 0.0,
+    "importance_std": 0.0
+  },
+  {
+    "feature": "passwordInPath",
+    "importance_mean": 0.0,
+    "importance_std": 0.0
+  },
+  {
+    "feature": "tokenInPath",
+    "importance_mean": 0.0,
+    "importance_std": 0.0
+  },
+  {
+    "feature": "logoutInParams",
+    "importance_mean": 0.0,
+    "importance_std": 0.0
+  },
+  {
+    "feature": "subscribeInParams",
+    "importance_mean": 0.0,
+    "importance_std": 0.0
+  },
+  {
+    "feature": "payInPath",
+    "importance_mean": -0.00015539174866786206,
+    "importance_std": 0.00018659563297244774
+  },
+  {
+    "feature": "setInPath",
+    "importance_mean": -0.00016746500665459536,
+    "importance_std": 0.001305496443867236
+  },
+  {
+    "feature": "setInParams",
+    "importance_mean": -0.00017372995045295732,
+    "importance_std": 0.0006575279924620992
+  },
+  {
+    "feature": "changeInPath",
+    "importance_mean": -0.00030593534891105724,
+    "importance_std": 0.0005889581079529327
+  },
+  {
+    "feature": "numOfIds",
+    "importance_mean": -0.0003712260737178674,
+    "importance_std": 0.0029411761417861317
+  },
+  {
+    "feature": "createInPath",
+    "importance_mean": -0.0007942621805287672,
+    "importance_std": 0.001517357185607901
+  }
+]
