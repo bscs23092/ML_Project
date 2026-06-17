@@ -1,4 +1,4 @@
-# Web Attack Detection Project
+# Web Attack Detection
 
 Unified Streamlit app for the three project modules:
 
